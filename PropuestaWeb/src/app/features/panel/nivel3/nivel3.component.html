@@ -1,0 +1,31 @@
+<div class="max-w-6xl mx-auto space-y-6 fade-in">
+  
+  <div class="flex items-center space-x-4 text-sm text-slate-500 mb-2">
+    <button routerLink="/panel/nivel2" class="flex items-center hover:text-emerald-600 transition-colors bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+      <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+      Regresar
+    </button>
+    <div class="flex items-center space-x-2">
+      <span class="text-slate-400">...</span> <span>/</span>
+      <span class="text-slate-400">Gestión de Capital</span> <span>/</span>
+      <span class="font-semibold text-slate-800">Ingresos y Egresos</span>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-2xl font-bold text-slate-800">Selecciona una Acción</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+    <!-- Tarjeta final que lleva al Nivel 4 (Formulario) -->
+    <div routerLink="/panel/nivel4" class="flex items-center p-4 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-500 cursor-pointer transition-all">
+      <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mr-4">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-800">Registrar Nuevo Ingreso</h3>
+        <p class="text-xs text-slate-500">Abre el formulario de captura.</p>
+      </div>
+    </div>
+  </div>
+</div>
