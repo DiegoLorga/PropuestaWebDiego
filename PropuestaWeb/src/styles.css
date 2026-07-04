@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Elimina el cursor de texto de todos los encabezados y párrafos */
+h2, p, .text-center {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 y 11 */
+  user-select: none; /* Estándar */
+  caret-color: transparent !important;
+}
+/* 1. Quitar cursor de escritura a todo por defecto */
+*:not(input):not(textarea) {
+  caret-color: transparent !important;
+}
+
+/* 2. DEVOLVER el cursor a los inputs para que se vea donde escribes */
+input, textarea {
+  caret-color: #ffffff !important; /* Aquí pones el color de tu tema (emerald-500) */
+  cursor: text !important;
+}
+
+/* 3. Asegurar que los botones tengan el cursor de 'manita' y no de texto */
+button {
+  cursor: pointer !important;
+}
