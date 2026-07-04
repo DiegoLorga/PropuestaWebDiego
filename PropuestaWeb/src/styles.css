@@ -14,13 +14,12 @@ h2, p, .text-center {
   caret-color: transparent !important;
 }
 
-/* 2. DEVOLVER el cursor a los inputs para que se vea donde escribes */
+/* 2. DEVOLVER el cursor a los inputs para que se vea donde se escribe */
 input, textarea {
-  caret-color: #ffffff !important; /* Aquí pones el color de tu tema (emerald-500) */
+  caret-color: #ffffff !important;
   cursor: text !important;
 }
 
-/* 3. Asegurar que los botones tengan el cursor de 'manita' y no de texto */
 button {
   cursor: pointer !important;
 }
