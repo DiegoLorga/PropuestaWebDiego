@@ -1,0 +1,105 @@
+/* Estado inicial del menú (Colapsado) */
+.sidebar-container {
+    width: 80px;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow-x: hidden;
+    white-space: nowrap;
+    z-index: 1000;
+    background-color: #fbfbfb;
+}
+
+/* El menú se expande si la variable es verdadera (clic) O si pasas el mouse por encima (hover) */
+.sidebar-container.expanded,
+.sidebar-container:hover {
+    width: 280px;
+}
+
+/* Control del ícono para que siempre quede centrado cuando está colapsado */
+.icon-fixed-width {
+    width: 24px;
+    /* O el tamaño que necesites para que todos los íconos se alineen */
+    display: inline-block;
+}
+
+/* Ocultar el texto por defecto */
+.menu-text {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    /* Evita clics accidentales en el texto invisible */
+}
+
+/* Mostrar el texto cuando el menú está expandido */
+.sidebar-container.expanded .menu-text,
+.sidebar-container:hover .menu-text {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.1s;
+    /* Le da un toque de suavidad */
+}
+
+/* --- Estilos de los botones tipo píldora  --- */
+.nav-item .nav-link {
+    border-radius: 0 25px 25px 0;
+    /* Redondeado solo a la derecha */
+    margin-right: 12px;
+    padding: 12px 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Efecto al pasar el cursor por un enlace */
+.nav-item .nav-link:hover {
+    background-color: rgba(179, 142, 93, 0.15);
+    /* Tono dorado muy claro */
+    color: #B38E5D !important;
+}
+
+/* Estilo para el enlace activo (la página en la que estás actualmente) */
+.nav-item .nav-link.active {
+    background-color: rgba(157, 36, 73, 0.1);
+    /* Fondo guinda transparente */
+    color: #9D2449 !important;
+    /* Texto guinda fuerte */
+    font-weight: 600;
+}
+
+/* Botón de hamburguesa personalizado */
+.btn-hamburguesa {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    /* Lo hace un círculo perfecto */
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto al pasar el cursor (hover) o al hacer clic (focus) */
+.btn-hamburguesa:hover,
+.btn-hamburguesa:focus {
+    background-color: rgba(179, 142, 93, 0.15);
+    /* Tono dorado muy claro */
+    outline: none;
+    box-shadow: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(179, 142, 93, 0.15);
+    /* Tono dorado muy claro */
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-noti{
+    background-color: fbfbfb;
+}
+
+.btn-noti:hover,
+.btn-noti:focus {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    /* Lo hace un círculo perfecto */
+    background-color: rgba(179, 142, 93, 0.15);
+    transition: background-color 0.2s ease;
+}
