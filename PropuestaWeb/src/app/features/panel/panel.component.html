@@ -90,15 +90,19 @@
       </div>
     </header>
 
-    <nav aria-label="breadcrumb" class="d-flex align-items-center ms-5 mt-3">
-      <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item">
-          <a routerLink="/panel" class="text-decoration-none" style="color: #B38E5D;">
-            <i class="bi bi-house-door-fill me-1"></i>Panel
+    <nav aria-label="breadcrumb" class="d-flex align-items-center">
+      <ol class="breadcrumb mb-0 ms-5 mt-3">
+        <li class="breadcrumb-item" *ngFor="let miga of migasDePan; let isLast = last" [class.active]="isLast">
+
+          <a *ngIf="!isLast" [routerLink]="miga.ruta" class="text-decoration-none fw-semibold" style="color: #B38E5D;">
+            <i class="bi bi-house-door-fill me-1" *ngIf="miga.etiqueta === 'Panel'"></i>
+            {{ miga.etiqueta }}
           </a>
-        </li>
-        <li class="breadcrumb-item active fw-bold" aria-current="page" style="color: #285C4D;">
-          {{ breadcrumbActual }}
+
+          <span *ngIf="isLast" class="fw-bold" style="color: #285C4D;" aria-current="page">
+            {{ miga.etiqueta }}
+          </span>
+
         </li>
       </ol>
     </nav>

@@ -1,0 +1,76 @@
+<div class="container-fluid py-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <div class="d-flex align-items-center">
+      <div>
+        <h4 class="fw-bold mb-0" style="color: #285C4D;">Historial de Actuaciones</h4>
+        <p class="text-muted mb-0 small">Folio: <span class="fw-bold">{{ folioActual }}</span></p>
+      </div>
+    </div>
+    
+    <button class="btn text-white fw-bold shadow-sm" style="background-color: #9D2449;">
+      <i class="bi bi-printer me-2"></i>Imprimir Historial
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      
+      <div class="custom-timeline">
+        
+        <div class="timeline-item" *ngFor="let acto of actuaciones">
+          
+          <div class="timeline-badge shadow-sm" [ngStyle]="{'background-color': acto.colorHex}">
+            <i class="bi text-white fs-5" [ngClass]="acto.icono"></i>
+          </div>
+          
+          <div class="card border-0 shadow-sm timeline-card">
+            <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <span class="badge me-2" [ngStyle]="{'background-color': acto.colorHex + '20', 'color': acto.colorHex, 'border': '1px solid ' + acto.colorHex}">
+                  Nivel {{ acto.nivel }}
+                </span>
+                <h6 class="fw-bold mb-0 text-dark">{{ acto.titulo }}</h6>
+              </div>
+              <small class="text-muted fw-bold"><i class="bi bi-calendar3 me-1"></i>{{ acto.fecha }} - {{ acto.hora }}</small>
+            </div>
+            
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-9">
+                  <p class="text-secondary mb-3">{{ acto.notas }}</p>
+                  <p class="mb-0 small text-muted">
+                    <i class="bi bi-person-badge me-1"></i>Ejecutor / Responsable: <span class="fw-bold text-dark">{{ acto.agente }}</span>
+                  </p>
+                </div>
+                
+                <div class="col-md-3 border-start text-center d-flex flex-column justify-content-center" *ngIf="acto.tieneEvidencia">
+                  <button class="btn btn-sm btn-outline-secondary mb-2 w-100">
+                    <i class="bi bi-file-pdf text-danger me-1"></i>Ver Acta PDF
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary w-100">
+                    <i class="bi bi-images text-primary me-1"></i>Fotos (2)
+                  </button>
+                </div>
+                <div class="col-md-3 border-start text-center d-flex align-items-center justify-content-center text-muted small" *ngIf="!acto.tieneEvidencia">
+                  Sin evidencias adjuntas
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div> <div class="timeline-item mt-4">
+          <div class="timeline-badge shadow-sm bg-light border text-muted d-flex align-items-center justify-content-center" style="width: 20px; height: 20px; left: -10px;">
+          </div>
+          <div class="ps-4">
+            <span class="text-muted small fw-bold">Inicio del historial</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

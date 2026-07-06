@@ -1,0 +1,50 @@
+/* Contenedor principal de la línea de tiempo */
+.custom-timeline {
+  position: relative;
+  padding-left: 2.5rem; /* Espacio para la línea y los iconos */
+  margin-bottom: 2rem;
+}
+
+/* La línea vertical que conecta todo */
+.custom-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background-color: #e9ecef; /* Un gris muy suave */
+  border-radius: 3px;
+}
+
+/* Cada elemento individual (Tarjeta + Icono) */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* El círculo con el icono que se pone encima de la línea */
+.timeline-badge {
+  position: absolute;
+  top: 10px; /* Alineado un poco hacia abajo respecto a la tarjeta */
+  left: -2.5rem; /* Lo jala hacia la izquierda para montarlo en la línea */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Para que quede por encima de la línea gris */
+  margin-left: -21px; /* Centrado fino sobre la línea de 3px */
+}
+
+/* Efecto sutil al pasar el mouse sobre las tarjetas */
+.timeline-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid transparent !important;
+}
+
+.timeline-card:hover {
+  transform: translateX(5px); /* Se mueve un poquito a la derecha */
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.08) !important;
+}

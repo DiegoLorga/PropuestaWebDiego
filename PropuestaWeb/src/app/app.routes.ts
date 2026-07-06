@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './features/panel/dashboard/dashboard.component';
+
 
 export const routes: Routes = [
   // 1. Redirección inicial
@@ -29,6 +29,15 @@ export const routes: Routes = [
       { 
         path: 'nivel2', 
         loadComponent: () => import('./features/panel/nivel2/nivel2.component').then(m => m.Nivel2Component) 
+      },
+      {
+        path: 'expedientes/detalle/:folio',
+        loadComponent: () => import('./features/panel/nivel2/detalle-expediente/detalle-expediente.component').then(m => m.DetalleExpedienteComponent)
+      },
+      // C) Historial de Actuaciones (Nivel 4 de profundidad visual)
+      {
+        path: 'expedientes/detalle/:folio/historial',
+        loadComponent: () => import('./features/panel/nivel2/detalle-expediente/historial-actualizacion/historial-actualizacion.component').then(m => m.HistorialComponent)
       },
       { 
         path: 'nivel3', 

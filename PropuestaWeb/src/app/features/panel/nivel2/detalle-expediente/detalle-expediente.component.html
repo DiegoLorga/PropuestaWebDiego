@@ -1,0 +1,122 @@
+<div class="container-fluid py-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex align-items-center">
+      <h4 class="fw-bold mb-0" style="color: #285C4D;">
+        Expediente: <span style="color: #9D2449;">{{ expediente.folio }}</span>
+      </h4>
+    </div>
+    
+    <div class="d-flex gap-2">
+      <span class="badge border bg-light text-dark shadow-sm px-3 py-2 fs-6">
+        <i class="bi bi-person-badge me-2 text-muted"></i>Ejecutor: {{ expediente.asignadoA }}
+      </span>
+      <span class="badge shadow-sm px-3 py-2 fs-6" style="background-color: #B38E5D;">
+        Nivel {{ expediente.nivelActual }} - {{ expediente.estatus }}
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-4">
+    <div class="col-md-7">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+          <h6 class="fw-bold mb-0 text-secondary"><i class="bi bi-person-lines-fill me-2"></i>Información del Contribuyente</h6>
+          <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i> Editar</button>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4 text-center border-end">
+              <div class="avatar-gran-circle mx-auto mb-2">{{ expediente.nombre.charAt(0) }}</div>
+              <h5 class="fw-bold" style="color: #285C4D;">{{ expediente.rfc }}</h5>
+              <span class="badge bg-success bg-opacity-10 text-success border border-success-subtle">RFC Válido</span>
+            </div>
+            <div class="col-sm-8 ps-4">
+              <h4 class="fw-bold mb-3" style="color: #9D2449;">{{ expediente.nombre }}</h4>
+              
+              <p class="mb-2 text-muted">
+                <i class="bi bi-geo-alt-fill me-2" style="color: #B38E5D;"></i>
+                <span class="text-dark">{{ expediente.contacto.domicilio }}</span>
+              </p>
+              <p class="mb-2 text-muted">
+                <i class="bi bi-telephone-fill me-2" style="color: #B38E5D;"></i>
+                <span class="text-dark">{{ expediente.contacto.telefono }}</span>
+              </p>
+              <p class="mb-0 text-muted">
+                <i class="bi bi-envelope-fill me-2" style="color: #B38E5D;"></i>
+                <span class="text-dark">{{ expediente.contacto.correo }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div class="card border-0 shadow-sm h-100 bg-deuda">
+        <div class="card-body p-4 text-white rounded">
+          <h6 class="fw-bold mb-4 opacity-75"><i class="bi bi-cash-stack me-2"></i>Desglose del Crédito Fiscal</h6>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Suerte Principal:</span>
+            <span class="fw-bold">{{ expediente.deuda.principal | currency:'MXN':'symbol-narrow' }}</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Recargos y Actualizaciones:</span>
+            <span class="fw-bold">{{ expediente.deuda.recargos | currency:'MXN':'symbol-narrow' }}</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3 pb-3 border-bottom border-light border-opacity-25">
+            <span>Multas:</span>
+            <span class="fw-bold">{{ expediente.deuda.multas | currency:'MXN':'symbol-narrow' }}</span>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <span class="fs-5 opacity-75">Deuda Total Estimada:</span>
+            <span class="fs-2 fw-bold">{{ expediente.deuda.total | currency:'MXN':'symbol-narrow' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h6 class="fw-bold text-secondary mb-3 mt-2">Gestión del Expediente</h6>
+  <div class="row g-4">
+    
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm module-card" routerLink="historial">
+        <div class="card-body text-center p-4">
+          <div class="icon-wrapper mx-auto mb-3" style="background-color: rgba(40, 92, 77, 0.1); color: #285C4D;">
+            <i class="bi bi-clock-history fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-1" style="color: #285C4D;">Historial de Actuaciones</h5>
+          <p class="text-muted small mb-0">Ver línea de tiempo, visitas y diligencias previas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm module-card text-muted" style="background-color: #f8f9fa;">
+        <div class="card-body text-center p-4">
+          <div class="icon-wrapper mx-auto mb-3" style="background-color: rgba(179, 142, 93, 0.1); color: #B38E5D;">
+            <i class="bi bi-folder-check fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-1">Documentos y Evidencias</h5>
+          <p class="small mb-0">PDFs firmados, fotografías y actas escaneadas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm module-card text-muted" style="background-color: #f8f9fa;">
+        <div class="card-body text-center p-4">
+          <div class="icon-wrapper mx-auto mb-3" style="background-color: rgba(157, 36, 73, 0.1); color: #9D2449;">
+            <i class="bi bi-house-lock fs-2"></i>
+          </div>
+          <h5 class="fw-bold mb-1">Bienes Embargados</h5>
+          <p class="small mb-0">Registro de propiedades y cuentas en resguardo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

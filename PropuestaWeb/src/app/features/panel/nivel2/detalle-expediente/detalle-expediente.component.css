@@ -1,0 +1,41 @@
+/* Avatar grande para el contribuyente */
+.avatar-gran-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f2f5;
+  color: #285C4D;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* Tarjeta de deuda usando el Guinda de tu paleta con un degradado sutil */
+.bg-deuda {
+  background: linear-gradient(135deg, #9D2449 0%, #7a1c38 100%);
+}
+
+/* Estilos para las tarjetas que sirven como botones (Módulos) */
+.module-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+  border: 1px solid transparent !important;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1) !important;
+  border-color: #B38E5D !important; /* Borde dorado al pasar el mouse */
+}
+
+/* Círculos de fondo para los iconos */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
