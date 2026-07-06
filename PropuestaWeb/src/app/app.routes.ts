@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { DashboardComponent } from './features/panel/dashboard/dashboard.component';
 
 export const routes: Routes = [
   // 1. Redirección inicial
@@ -15,9 +16,13 @@ export const routes: Routes = [
     path: 'panel', 
     loadComponent: () => import('./features/panel/panel.component').then(m => m.PanelComponent),
     children: [
-      { path: '', redirectTo: 'nivel1', pathMatch: 'full' },
-      
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
       { 
+        path: 'dashboard', 
+        loadComponent: () => import('./features/panel/dashboard/dashboard.component').then(m => m.DashboardComponent) 
+      },
+      {
         path: 'nivel1', 
         loadComponent: () => import('./features/panel/nivel1/nivel1.component').then(m => m.Nivel1Component) 
       },

@@ -1,0 +1,88 @@
+<div class="container-fluid py-4">
+  
+  <div class="row mb-4 align-items-center g-3">
+    <div class="col-md-6">
+      <h4 class="fw-bold mb-0" style="color: #285C4D;">
+        <i class="bi bi-folder2-open me-2"></i>Gestión de Expedientes
+      </h4>
+      <p class="text-muted mb-0">Directorio general y seguimiento de contribuyentes</p>
+    </div>
+    
+    <div class="col-md-6 d-flex justify-content-md-end">
+      <div class="input-group shadow-sm" style="max-width: 400px;">
+        <span class="input-group-text bg-white border-end-0 text-muted">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" class="form-control border-start-0 custom-search" placeholder="Buscar por RFC, Nombre o Folio...">
+        <button class="btn text-white fw-bold px-4 btn-buscar" type="button">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-0 table-responsive">
+      
+      <table class="table table-hover align-middle mb-0">
+        <thead style="background-color: #f8f9fa;">
+          <tr>
+            <th scope="col" class="py-3 ps-4" style="color: #9D2449;">Folio</th>
+            <th scope="col" class="py-3 text-secondary">Contribuyente / RFC</th>
+            <th scope="col" class="py-3 text-secondary text-center">Nivel Actual</th>
+            <th scope="col" class="py-3 text-secondary">Estatus</th>
+            <th scope="col" class="py-3 text-secondary text-end">Deuda Estimada</th>
+            <th scope="col" class="py-3 text-secondary text-center pe-4">Acciones</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let exp of expedientes">
+            
+            <td class="ps-4 fw-bold" style="color: #285C4D;">{{ exp.folio }}</td>
+            
+            <td>
+              <div class="fw-bold">{{ exp.nombre }}</div>
+              <div class="text-muted small">{{ exp.rfc }}</div>
+            </td>
+            
+            <td class="text-center">
+              <span class="badge rounded-pill badge-nivel-{{ exp.nivel }}">
+                Nivel {{ exp.nivel }}
+              </span>
+            </td>
+            
+            <td>{{ exp.estado }}</td>
+            
+            <td class="text-end fw-bold text-secondary">
+              {{ exp.deuda | currency:'MXN':'symbol-narrow' }}
+            </td>
+            
+            <td class="text-center pe-4">
+              <div class="btn-group shadow-sm">
+                <button type="button" class="btn btn-sm btn-light border" title="Ver Historial">
+                  <i class="bi bi-eye text-primary"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-light border" title="Actualizar / Diligencia">
+                  <i class="bi bi-pencil-square" style="color: #B38E5D;"></i>
+                </button>
+              </div>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    
+    <div class="card-footer bg-white py-3 border-top d-flex justify-content-between align-items-center">
+      <small class="text-muted">Mostrando 5 de 1,204 expedientes</small>
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+        <li class="page-item active" aria-current="page"><a class="page-link shadow-none" style="background-color: #285C4D; border-color: #285C4D;" href="#">1</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+        <li class="page-item"><a class="page-link text-dark" href="#">Siguiente</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

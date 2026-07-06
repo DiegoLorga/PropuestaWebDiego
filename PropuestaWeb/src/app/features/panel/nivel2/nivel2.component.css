@@ -1,0 +1,53 @@
+
+.custom-search:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+
+/* Estilo del botón de buscar */
+.btn-buscar {
+  background-color: #B38E5D;
+  border-color: #B38E5D;
+  transition: background-color 0.2s;
+}
+
+.btn-buscar:hover {
+  background-color: #9D2449;
+  border-color: #9D2449;
+}
+
+/* Efecto de sombra sutil al pasar el mouse sobre una fila de la tabla */
+table.table-hover tbody tr:hover {
+  background-color: rgba(179, 142, 93, 0.05); 
+  cursor: pointer;
+}
+
+/* ===== COLORES DINÁMICOS PARA LOS NIVELES ===== */
+
+/* Nivel 1: Persuasivo (Iniciando, color advertencia suave/dorado) */
+.badge-nivel-1 {
+  background-color: rgba(179, 142, 93, 0.2);
+  color: #8c6a3d;
+  padding: 6px 12px;
+}
+
+/* Nivel 2: Requerimiento (Color principal Verde Oscuro) */
+.badge-nivel-2 {
+  background-color: rgba(40, 92, 77, 0.15);
+  color: #285C4D;
+  padding: 6px 12px;
+}
+
+/* Nivel 3: Embargo (Color Guinda) */
+.badge-nivel-3 {
+  background-color: rgba(157, 36, 73, 0.15);
+  color: #9D2449;
+  padding: 6px 12px;
+}
+
+/* Nivel 4: Remate (Color Rojo fuerte de Bootstrap para urgencia máxima) */
+.badge-nivel-4 {
+  background-color: #ffe5e5;
+  color: #dc3545;
+  padding: 6px 12px;
+}

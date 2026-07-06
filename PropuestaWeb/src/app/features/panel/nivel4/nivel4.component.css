@@ -1,0 +1,43 @@
+/* Botón para generar la vista previa (Usa el color Dorado de Finova) */
+.btn-generar {
+  background-color: #B38E5D;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-generar:hover {
+  background-color: #9c7b4f;
+}
+
+/* Botón de exportación a PDF (Aprovechamos el color Guinda) */
+.btn-pdf {
+  background-color: #9D2449;
+  border: none;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-pdf:hover {
+  background-color: #7a1c38;
+  transform: translateY(-2px);
+}
+
+/* Botón de exportación a Excel (Aprovechamos el color Verde Oscuro) */
+.btn-excel {
+  background-color: #285C4D;
+  border: none;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-excel:hover {
+  background-color: #1a3c32;
+  transform: translateY(-2px);
+}
+
+/* Ajustes sutiles para la tabla de vista previa */
+.text-sm {
+  font-size: 0.9rem;
+}
+
+table tfoot {
+  border-top: 2px solid #dee2e6;
+}

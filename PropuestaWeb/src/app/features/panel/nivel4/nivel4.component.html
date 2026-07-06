@@ -1,0 +1,124 @@
+<div class="container-fluid py-4">
+  
+  <div class="mb-4">
+    <h4 class="fw-bold mb-0" style="color: #285C4D;">
+      <i class="bi bi-file-earmark-bar-graph me-2"></i>Reportes y Estadísticas Oficiales
+    </h4>
+    <p class="text-muted mb-0">Generación de informes de recaudación, diligencias y rendimiento</p>
+  </div>
+
+  <div class="row g-4">
+    
+    <div class="col-md-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white py-3 border-bottom">
+          <h6 class="fw-bold mb-0 text-secondary"><i class="bi bi-funnel me-2"></i>Parámetros del Reporte</h6>
+        </div>
+        <div class="card-body">
+          <form class="row g-3 align-items-end">
+            
+            <div class="col-md-3">
+              <label class="form-label fw-bold small text-muted">Tipo de Reporte</label>
+              <select class="form-select border-secondary-subtle">
+                <option selected>Diligencias y Estatus Global</option>
+                <option>Rendimiento por Notificador</option>
+                <option>Proyección de Remates (Nivel 4)</option>
+                <option>Créditos Fiscales Prescritos</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label fw-bold small text-muted">Nivel</label>
+              <select class="form-select border-secondary-subtle">
+                <option selected>Todos los Niveles</option>
+                <option value="1">Nivel 1: Persuasivo</option>
+                <option value="2">Nivel 2: Requerimiento</option>
+                <option value="3">Nivel 3: Embargo</option>
+                <option value="4">Nivel 4: Remate</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label fw-bold small text-muted">Fecha Inicio</label>
+              <input type="date" class="form-control border-secondary-subtle">
+            </div>
+
+            <div class="col-md-2">
+              <label class="form-label fw-bold small text-muted">Fecha Fin</label>
+              <input type="date" class="form-control border-secondary-subtle">
+            </div>
+
+            <div class="col-md-3 d-flex gap-2">
+              <button type="button" class="btn btn-outline-secondary w-100">Limpiar</button>
+              <button type="button" class="btn text-white w-100 fw-bold btn-generar">
+                <i class="bi bi-arrow-clockwise me-1"></i>Generar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center mb-3 mt-2">
+        <h6 class="fw-bold text-secondary mb-0">Vista Previa de Datos ({{ totalExpedientes }} registros encontrados)</h6>
+        
+        <div class="d-flex gap-2">
+          <button class="btn btn-pdf text-white fw-bold shadow-sm px-4">
+            <i class="bi bi-file-earmark-pdf-fill me-2"></i>Exportar PDF
+          </button>
+          
+          <button class="btn btn-excel text-white fw-bold shadow-sm px-4">
+            <i class="bi bi-file-earmark-excel-fill me-2"></i>Exportar Excel
+          </button>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0 table-responsive">
+          <table class="table table-striped table-hover align-middle mb-0 text-sm">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" class="py-3 ps-4 text-secondary">Fecha</th>
+                <th scope="col" class="py-3 text-secondary">Folio / Expediente</th>
+                <th scope="col" class="py-3 text-secondary text-center">Nivel</th>
+                <th scope="col" class="py-3 text-secondary">Acción Realizada</th>
+                <th scope="col" class="py-3 text-secondary">Responsable</th>
+                <th scope="col" class="py-3 text-secondary text-end">Monto Involucrado</th>
+                <th scope="col" class="py-3 text-secondary text-center pe-4">Estatus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reg of datosVistaPrevia">
+                <td class="ps-4 text-muted">{{ reg.fecha }}</td>
+                <td class="fw-bold text-dark">{{ reg.folio }}</td>
+                <td class="text-center">
+                  <span class="badge border text-dark" style="background-color: #f8f9fa;">N{{ reg.nivel }}</span>
+                </td>
+                <td>{{ reg.accion }}</td>
+                <td class="text-muted">{{ reg.responsable }}</td>
+                <td class="text-end fw-bold" style="color: #285C4D;">
+                  {{ reg.monto | currency:'MXN':'symbol-narrow' }}
+                </td>
+                <td class="text-center pe-4">
+                  <span class="badge" [ngClass]="reg.estatus === 'Completada' || reg.estatus === 'Notificado' || reg.estatus === 'Acta Levantada' ? 'bg-success bg-opacity-10 text-success border border-success-subtle' : 'bg-warning bg-opacity-10 text-warning border border-warning-subtle'">
+                    {{ reg.estatus }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot class="bg-light fw-bold">
+              <tr>
+                <td colspan="5" class="text-end py-3">Total Estimado en Reporte:</td>
+                <td class="text-end py-3 fs-5" style="color: #9D2449;">{{ totalMonto | currency:'MXN':'symbol-narrow' }}</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

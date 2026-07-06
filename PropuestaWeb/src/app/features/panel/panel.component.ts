@@ -28,13 +28,13 @@ export class PanelComponent {
   // Función que asigna el nombre según la URL
   actualizarBreadcrumb(url: string) {
     if (url.includes('nivel1')) {
-      this.breadcrumbActual = 'Nivel 1: Persuasivo';
+      this.breadcrumbActual = 'Registro';
     } else if (url.includes('nivel2')) {
-      this.breadcrumbActual = 'Nivel 2: Requerimiento';
+      this.breadcrumbActual = 'Gestión de Expediente';
     } else if (url.includes('nivel3')) {
-      this.breadcrumbActual = 'Nivel 3: Embargo';
+      this.breadcrumbActual = 'Asignación y Rutas';
     } else if (url.includes('nivel4')) {
-      this.breadcrumbActual = 'Nivel 4: Remate';
+      this.breadcrumbActual = 'Reportes';
     } else {
       this.breadcrumbActual = 'Inicio';
     }

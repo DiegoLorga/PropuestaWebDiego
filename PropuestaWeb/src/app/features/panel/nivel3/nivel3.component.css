@@ -1,0 +1,48 @@
+/* Avatar circular con el color principal */
+.avatar-circle {
+  width: 45px;
+  height: 45px;
+  background-color: #285C4D;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Insignia cuando el notificador tiene espacio */
+.badge-disponible {
+  background-color: rgba(40, 92, 77, 0.1);
+  color: #285C4D;
+}
+
+/* Efecto hover en las tarjetas de notificadores */
+.agente-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid transparent !important;
+}
+
+.agente-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.08) !important;
+  border-left: 4px solid #B38E5D !important;
+}
+
+/* Estilo del botón de asignación masiva */
+.btn-asignar {
+  background-color: #9D2449;
+  border-color: #9D2449;
+  transition: background-color 0.2s;
+}
+
+.btn-asignar:hover {
+  background-color: #7a1c38;
+}
+
+/* Checkbox estilizado con los colores de la marca */
+.custom-checkbox:checked {
+  background-color: #B38E5D;
+  border-color: #B38E5D;
+}
