@@ -1,0 +1,32 @@
+/* Asegura que los inputs tengan un toque visual al enfocarse usando el dorado */
+.form-control:focus, .form-select:focus {
+  border-color: #B38E5D;
+  box-shadow: 0 0 0 0.25rem rgba(179, 142, 93, 0.25);
+}
+
+/* Estilos específicos para el recuadro grande de la firma */
+.signature-pad {
+  height: 250px; /* Altura amplia para firmar cómodamente */
+  border: 2px dashed #B38E5D !important; /* Borde punteado dorado */
+  border-radius: 8px;
+  cursor: crosshair; /* Cambia el cursor a una cruz para incitar a dibujar */
+  transition: background-color 0.3s;
+}
+
+.signature-pad:hover {
+  background-color: #fdfdfc !important; /* Efecto sutil al pasar el mouse */
+}
+
+/* Estilo para el botón de guardar */
+.btn-guardar {
+  background-color: #B38E5D;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #9D2449; /* Cambia a guinda al pasar el cursor */
+}
+
+.btn-guardar:active {
+  transform: scale(0.98);
+}

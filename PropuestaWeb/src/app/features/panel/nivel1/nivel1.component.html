@@ -1,18 +1,105 @@
-<div class="max-w-6xl mx-auto space-y-6 fade-in">
-  <!-- Título (Visibilidad del estado del sistema) -->
-  <div>
-    <h2 class="text-3xl font-bold text-slate-800">Módulos Financieros</h2>
-    <p class="text-slate-500 mt-1">Selecciona el área con la que deseas trabajar hoy.</p>
-  </div>
+<div class="container-fluid py-3">
+  
+  <div class="card shadow-sm border-0">
+    
+    <div class="card-header text-white py-3" style="background-color: #285C4D;">
+      <h4 class="mb-0"><i class="bi bi-file-earmark-text me-2"></i>Registro de Visita - Nivel 1 (Persuasivo)</h4>
+    </div>
+    
+    <div class="card-body bg-light p-4">
+      <form>
+        
+        <h5 class="fw-bold mb-3 border-bottom pb-2" style="color: #9D2449;">1. Datos del Contribuyente</h5>
+        <div class="row g-3 mb-4">
+          <div class="col-md-4">
+            <label class="form-label fw-bold">Nombre Completo o Razón Social</label>
+            <input type="text" class="form-control border-secondary-subtle" placeholder="Ej. Juan Pérez">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-bold">RFC</label>
+            <input type="text" class="form-control border-secondary-subtle" placeholder="ABCD123456EF7">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-bold">Teléfono de Contacto</label>
+            <input type="tel" class="form-control border-secondary-subtle" placeholder="951 000 0000">
+          </div>
+          <div class="col-md-8">
+            <label class="form-label fw-bold">Domicilio Fiscal / Dirección de Visita</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white"><i class="bi bi-geo-alt"></i></span>
+              <input type="text" class="form-control border-secondary-subtle" placeholder="Calle, Número, Colonia, Municipio">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-bold">Código Postal</label>
+            <input type="text" class="form-control border-secondary-subtle" placeholder="Ej. 68000">
+          </div>
+        </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-    <!-- Tarjeta que lleva al Nivel 2 -->
-    <div routerLink="/panel/nivel2" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-emerald-400 cursor-pointer transition-all group">
-      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-      </div>
-      <h3 class="text-lg font-bold text-slate-800 mb-2">Gestión de Capital</h3>
-      <p class="text-sm text-slate-500">Administra los flujos de efectivo y operaciones diarias.</p>
+        <h5 class="fw-bold mb-3 border-bottom pb-2" style="color: #9D2449;">2. Detalles del Requerimiento</h5>
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Folio del Expediente</label>
+            <input type="text" class="form-control border-secondary-subtle" placeholder="EXP-2026-001">
+          </div>
+          
+          <div class="col-md-3">
+            <label class="form-label fw-bold text-primary-emphasis">Fecha de Notificación</label>
+            <input type="date" class="form-control border-secondary-subtle">
+          </div>
+          
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Monto Adeudado ($)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-white">$</span>
+              <input type="number" class="form-control border-secondary-subtle" placeholder="0.00">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Estatus Inicial de Visita</label>
+            <select class="form-select border-secondary-subtle">
+              <option selected disabled>Seleccionar estatus...</option>
+              <option value="1">Localizado - Entregado</option>
+              <option value="2">No Localizado</option>
+              <option value="3">Se negó a recibir notificación</option>
+              <option value="4">Domicilio Deshabitado</option>
+            </select>
+          </div>
+        </div>
+
+        <h5 class="fw-bold mb-3 border-bottom pb-2" style="color: #9D2449;">3. Resultados de la Diligencia</h5>
+        <div class="row g-3 mb-4">
+          
+          <div class="col-md-12">
+            <label class="form-label fw-bold">Observaciones Generales</label>
+            <textarea class="form-control border-secondary-subtle" rows="3" placeholder="Describa los detalles de la visita, acuerdos verbales, o negativas del contribuyente..."></textarea>
+          </div>
+
+          <div class="col-md-12 mt-4">
+            <label class="form-label fw-bold fs-5" style="color: #285C4D;">Firma de Conformidad (Contribuyente / Receptor)</label>
+            <div class="signature-pad bg-white d-flex justify-content-center align-items-center">
+              <div class="text-center text-muted">
+                <i class="bi bi-pen fs-1 mb-2"></i>
+                <p class="mb-0">Área designada para firma del receptor</p>
+                <small>(Utilice el cursor o pantalla táctil para firmar)</small>
+              </div>
+            </div>
+            <hr class="mt-0" style="border-top: 2px solid #285C4D; width: 40%; margin-left: auto; margin-right: auto;">
+            <p class="text-center fw-bold mt-2">Nombre y Firma</p>
+          </div>
+          
+        </div>
+
+        <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
+          <button type="button" class="btn btn-outline-secondary px-4 fw-bold">
+            <i class="bi bi-x-circle me-2"></i>Cancelar
+          </button>
+          <button type="submit" class="btn text-white px-5 fw-bold btn-guardar">
+            <i class="bi bi-check2-circle me-2"></i>Guardar Registro
+          </button>
+        </div>
+
+      </form>
     </div>
   </div>
 </div>
