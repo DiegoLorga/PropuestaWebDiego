@@ -1,0 +1,74 @@
+/* Fondo general de la pantalla para que la tarjeta resalte */
+.login-bg {
+  background-color: #f4f6f9;
+}
+
+/* Control del ancho máximo de la tarjeta para que no se estire demasiado */
+.login-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Lado Izquierdo: Branding. 
+  Uso de los colores #9D2449 (Guinda) y #285C4D (Verde Oscuro) en un degradado. 
+  Si prefieres un color sólido, puedes usar background-color en su lugar.
+*/
+.brand-section {
+  background: #9D2449
+}
+
+/* Color principal para los títulos del formulario */
+.form-title {
+  color: #9D2449;
+  font-weight: 700;
+}
+
+/* Estilos para los inputs, usando el color dorado/arena (#B38E5D) al enfocarlos */
+.custom-input {
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+}
+
+.custom-input:focus {
+  border-color: #B38E5D;
+  box-shadow: 0 0 0 0.25rem rgba(179, 142, 93, 0.25);
+}
+
+/* Color para el enlace de "Olvidaste tu contraseña" */
+.custom-link {
+  color: #285C4D;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+  color: #9D2449;
+}
+
+/* Botón principal usando el Dorado (#B38E5D) y cambiando al Guinda (#9D2449) en hover */
+.custom-btn {
+  background-color: #B38E5D;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px; /* Bordes redondeados como en tu imagen de referencia */
+  padding: 12px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.custom-btn:hover {
+  background-color: #9D2449;
+  color: #ffffff;
+}
+
+.custom-btn:active {
+  transform: scale(0.98);
+}
+
+.custom-checkbox:checked {
+  background-color: #285C4D;
+  border-color: #285C4D;
+}
+

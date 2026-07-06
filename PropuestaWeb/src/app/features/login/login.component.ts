@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-login',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
+  styleUrls: ['./login.component.css'],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
@@ -15,7 +16,7 @@ export class LoginComponent {
 
   loginForm: FormGroup = this.fb.group({
     usuario: ['', Validators.required],
-    password: ['', Validators.required]
+    password: ['', Validators.required],
   });
 
   mostrarPassword = false;
