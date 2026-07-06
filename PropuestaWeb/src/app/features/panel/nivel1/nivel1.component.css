@@ -30,3 +30,11 @@
 .btn-guardar:active {
   transform: scale(0.98);
 }
+.texto-ini {
+  font-weight: bold;
+  color: #285C4D; /* Color verde oscuro */
+}
+
+.text-muted {
+  color: #6c757d; /* Color gris para el texto secundario */
+}
