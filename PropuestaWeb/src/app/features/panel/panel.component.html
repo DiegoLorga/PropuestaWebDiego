@@ -26,10 +26,71 @@
       </li>
 
       <li class="nav-item mb-1">
-        <a routerLink="nivel2" routerLinkActive="active" class="nav-link d-flex align-items-center text-dark">
+
+        <a (click)="toggleCarpetaGestion()" class="nav-link d-flex align-items-center text-dark"
+          [class.active]="menuGestionAbierto || estaEnRutaGestion()" style="cursor: pointer;">
+
           <i class="bi bi-folder-fill fs-5 ms-2"></i>
-          <span class="ms-3 menu-text">Gestión Expediente</span>
+          <span class="ms-3 menu-text d-flex justify-content-between align-items-center w-100">
+            Gestión Expediente
+            <i class="bi" [ngClass]="menuGestionAbierto ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </span>
         </a>
+
+        <div *ngIf="menuGestionAbierto && menuAbierto" class="ms-4 ps-2 border-start border-2"
+          style="border-color: #e9ecef;">
+          <a (click)="subseccion1Abierta = !subseccion1Abierta"
+            class="nav-link text-secondary d-flex justify-content-between align-items-center py-2"
+            style="cursor: pointer;">
+            <span><i class="bi bi-folder2 me-2"></i> Registro Inicial</span>
+            <i class="bi" [ngClass]="subseccion1Abierta ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </a>
+          <div *ngIf="subseccion1Abierta" class="ms-3 ps-2 border-start border-2" style="border-color: #F4EBEF;">
+            <a routerLink="/panel/nivel2/alta" routerLinkActive="active" class="nav-link text-muted py-1"
+              style="font-size: 0.85rem;">
+              Alta de Expediente
+            </a>
+          </div>
+
+          <a (click)="subseccion2Abierta = !subseccion2Abierta"
+            class="nav-link text-secondary d-flex justify-content-between align-items-center py-2"
+            style="cursor: pointer;">
+            <span><i class="bi bi-folder2 me-2"></i> Asignaciones</span>
+            <i class="bi" [ngClass]="subseccion2Abierta ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </a>
+          <div *ngIf="subseccion2Abierta" class="ms-3 ps-2 border-start border-2" style="border-color: #F4EBEF;">
+            <a routerLink="/panel/nivel2/rutas" routerLinkActive="active" class="nav-link text-muted py-1"
+              style="font-size: 0.85rem;">
+              Rutas de Trabajo
+            </a>
+          </div>
+
+          <a (click)="subseccion3Abierta = !subseccion3Abierta"
+            class="nav-link text-secondary d-flex justify-content-between align-items-center py-2"
+            style="cursor: pointer;">
+            <span><i class="bi bi-folder2 me-2"></i> Cobro Coactivo</span>
+            <i class="bi" [ngClass]="subseccion3Abierta ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+          </a>
+          <div *ngIf="subseccion3Abierta" class="ms-3 ps-2 border-start border-2" style="border-color: #F4EBEF;">
+
+            <a (click)="seccionContenedoraAbierta = !seccionContenedoraAbierta"
+              class="nav-link text-muted d-flex justify-content-between align-items-center py-1"
+              style="cursor: pointer; font-size: 0.9rem;">
+              <span><i class="bi bi-layers me-2"></i> Etapa Persuasiva</span>
+              <i class="bi" [ngClass]="seccionContenedoraAbierta ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+            </a>
+
+            <div *ngIf="seccionContenedoraAbierta" class="ms-3 ps-2 border-start border-2"
+              style="border-color: #9D2449;">
+              <a routerLink="nivel2" routerLinkActive="active" class="nav-link text-dark py-1 fw-bold"
+                style="font-size: 0.85rem;">
+                Directorio General
+              </a>
+            </div>
+
+          </div>
+
+        </div>
       </li>
 
       <li class="nav-item mb-1">
